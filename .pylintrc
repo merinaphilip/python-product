@@ -1,0 +1,5 @@
+[pylint]
+disable = line-too-long, unused-import
+
+[MASTER]
+ignore-patterns=__pycache__/*,venv/*

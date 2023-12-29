@@ -1,5 +1,12 @@
 name: ci pipeline
-on: workflow_dispatch
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -12,5 +19,4 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          #GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}} # Only required for Organizations, not personal accounts.              
-          
+          #GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}} # Only required for Organizations, not personal accounts.                      

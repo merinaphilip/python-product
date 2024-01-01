@@ -1,0 +1,12 @@
+name: Python Product CI
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+      - develop
+    workflow_dispatch:
+jobs:
+  call-workflow-from-central-repo:
+    merinaphilip/central-action-repo.github/workflows/secret-scanning.yaml@feature/gitleaks

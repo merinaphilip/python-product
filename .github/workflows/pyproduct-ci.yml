@@ -9,4 +9,4 @@ on:
     workflow_dispatch:
 jobs:
   call-workflow-from-central-repo:
-    merinaphilip/central-action-repo/.github/workflows/secret-scanning.yaml@feature/gitleaks
+    uses: merinaphilip/central-action-repo/.github/workflows/secret-scanning.yaml@feature/gitleaks

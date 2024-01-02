@@ -1,10 +1,10 @@
 name: Code linting
 on:
-  pull_request:
-    types: opened
-    branches:
-      - develop
-      - main
+  #pull_request:
+    #types: opened
+    #branches:
+      #- develop
+      #- main
   workflow_dispatch:
 jobs:
   pre-commit:

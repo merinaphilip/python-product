@@ -26,6 +26,4 @@ jobs:
           chmod 755 gitleaks && mv gitleaks /usr/local/bin/
           gitleaks detect -v --redact --no-git $GITHUB_REPOSITORY
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITLEAKS_CONFIG: ".gitleaks.toml"
-                   
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}            

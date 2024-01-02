@@ -1,4 +1,7 @@
 name: ci pipeline
+
+env:
+  REPO: $GITHUB_REPOSITORY
 on:
   pull_request:
     types:
@@ -24,6 +27,6 @@ jobs:
           sudo apt-get install make
           git clone https://github.com/gitleaks/gitleaks.git && cd gitleaks && make build
           chmod 755 gitleaks && mv gitleaks /usr/local/bin/
-          gitleaks detect -v --redact --no-git $GITHUB_REPOSITORY
+          gitleaks detect -v --redact --no-git $REPO
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}            

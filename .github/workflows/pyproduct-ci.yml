@@ -10,3 +10,5 @@ on:
 jobs:
   call-workflow-from-central-repo:
     uses: merinaphilip/central-action-repo/.github/workflows/secret-scanning.yaml@feature/gitleaks
+  call-workflow-code-linting:
+    uses: merinaphilip/central-action-repo/.github/workflows/code-linter.yaml@feature/code-linters

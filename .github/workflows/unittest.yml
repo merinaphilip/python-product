@@ -1,0 +1,6 @@
+name: Unittesting Python Code
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened

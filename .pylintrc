@@ -1,0 +1,5 @@
+[pylint]
+disable = line-too-long, unused-import, unused-variable, undefined-variable, missing-class-docstring, bare-except
+
+[MASTER]
+ignore-patterns=__pycache__/*,venv/*

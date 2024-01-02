@@ -1,3 +1,4 @@
+''' application to display hello world '''
 from flask_wtf import CSRFProtect             #fix
 from flask import Flask,render_template
 import socket

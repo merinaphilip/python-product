@@ -27,5 +27,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run Gitleaks
-        run: gitleaks detect -v --redact --no-git .
-        
+        run: |
+          echo $GITHUB_REPOSITORY
+          gitleaks detect -v --redact --no-git .        

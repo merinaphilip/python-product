@@ -2,7 +2,7 @@
 import unittest
 from flask import Flask
 from flask.testing import FlaskClient
-from unittest.mock import patchy
+from unittest.mock import patch
 from flask_wtf import CSRFProtect                         #use CSRFProtect module
 from flask_sslify import SSLify
 from app import index

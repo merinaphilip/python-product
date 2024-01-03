@@ -5,12 +5,12 @@ on:
       - opened
       - reopened
 jobs:
-  pre-commit:
+  unit-test:
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout
         uses: actions/checkout@v4
-      - name: Install dependencies
+      - name: Run unit tests
         run: |
           python -m venv venv
           source venv/bin/activate

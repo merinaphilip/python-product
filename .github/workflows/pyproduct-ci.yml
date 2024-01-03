@@ -10,6 +10,6 @@ on:
   workflow_dispatch:
 jobs:
   call-workflow-from-central-repo:
-    uses: merinaphilip/central-action-repo/.github/workflows/secret-scanning.yaml@feature/gitleaks
+    uses: merinaphilip/central-action-repo/.github/workflows/secret-scanning.yaml@develop
   call-workflow-code-linting:
-    uses: merinaphilip/central-action-repo/.github/workflows/code-linter.yaml@feature/code-linters
+    uses: merinaphilip/central-action-repo/.github/workflows/code-linter.yaml@develop

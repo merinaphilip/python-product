@@ -7,11 +7,13 @@ from flask_wtf import CSRFProtect                         #use CSRFProtect modul
 from flask_sslify import SSLify
 from app import index
 
+
+
 class AppTestCase(unittest.TestCase):
     def setUp(self):
         self.app = Flask(__name__)
-        csrf = CSRFProtect(app)
-        sslify = SSLify(app)
+        csrf = CSRFProtect(self.app)
+        sslify = SSLify(self.app)
         self.app.config['TESTING'] = True
         self.app.config['WTF_CSRF_ENABLED'] = True      #enabled for testing
         self.client = self.app.test_client()

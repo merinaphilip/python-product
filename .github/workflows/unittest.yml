@@ -4,3 +4,19 @@ on:
     types:
       - opened
       - reopened
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install coverage pytest
+          python -m coverage run -m pytest
+          python -m coverage report
+          python -m coverage xml -o /coverage.xml
+          echo "Coverage report generated"

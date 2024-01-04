@@ -1,15 +1,17 @@
-# name: Python Product CI
-# on:
-  # pull_request:
-    # types:
-      # - opened
-      # - reopened
-    # branches:
-      # - main
-      # - develop
-  # workflow_dispatch:
-# jobs:
-  # call-workflow-from-central-repo:
-    # uses: merinaphilip/central-action-repo/.github/workflows/secret-scanning.yaml@develop
-  # call-workflow-code-linting:
-    # uses: merinaphilip/central-action-repo/.github/workflows/code-linter.yaml@develop
+name: Python Product CI
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+jobs:
+  call-workflow-from-central-repo:
+    uses: merinaphilip/central-action-repo/.github/workflows/secret-scanning.yaml@develop
+  call-workflow-code-linting:
+    uses: merinaphilip/central-action-repo/.github/workflows/code-linter.yaml@develop
+  call-workflow-unittest:
+    uses: merinaphilip/central-action-repo/.github/workflows/pytest.yaml@develop

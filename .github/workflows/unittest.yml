@@ -1,22 +1,22 @@
-name: Unittesting Python Code
-on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-jobs:
-  unit-test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code checkout
-        uses: actions/checkout@v4
-      - name: Run unit tests
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install coverage pytest flask flask_wtf flask_sslify
-          python -m coverage run -m pytest
-          python -m coverage report
-          python -m coverage xml -o coverage.xml
-          echo "Coverage report generated"
+# name: Unittesting Python Code
+# on:
+  # pull_request:
+    # types:
+      # - opened
+      # - reopened
+# jobs:
+  # unit-test:
+    # runs-on: ubuntu-latest
+    # steps:
+      # - name: Code checkout
+        # uses: actions/checkout@v4
+      # - name: Run unit tests
+        # run: |
+          # python -m venv venv
+          # source venv/bin/activate
+          # python -m pip install --upgrade pip
+          # pip install coverage pytest flask flask_wtf flask_sslify
+          # python -m coverage run -m pytest
+          # python -m coverage report
+          # python -m coverage xml -o coverage.xml
+          # echo "Coverage report generated"

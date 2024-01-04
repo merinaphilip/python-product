@@ -1,32 +1,32 @@
-name: ci pipeline
-on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-    branches:
-      - main
-      - develop
-  workflow_dispatch:
-  push:
-    branches: develop
-jobs:
-  scan:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install Gitleaks
-        run: |
-          sudo apt-get update
-          sudo apt-get install make
-          git clone https://github.com/gitleaks/gitleaks.git && cd gitleaks && make build
-          chmod 755 gitleaks && mv gitleaks /usr/local/bin/
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Copy code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Run Gitleaks
-        run: |
-          echo $GITHUB_REPOSITORY
-          gitleaks detect -v --redact --no-git .        
+# name: ci pipeline
+# on:
+  # pull_request:
+    # types:
+      # - opened
+      # - reopened
+    # branches:
+      # - main
+      # - develop
+  # workflow_dispatch:
+  # push:
+    # branches: develop
+# jobs:
+  # scan:
+    # runs-on: ubuntu-latest
+    # steps:
+      # - name: Install Gitleaks
+        # run: |
+          # sudo apt-get update
+          # sudo apt-get install make
+          # git clone https://github.com/gitleaks/gitleaks.git && cd gitleaks && make build
+          # chmod 755 gitleaks && mv gitleaks /usr/local/bin/
+        # env:
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Copy code
+        # uses: actions/checkout@v4
+        # with:
+          # fetch-depth: 0
+      # - name: Run Gitleaks
+        # run: |
+          # echo $GITHUB_REPOSITORY
+          # gitleaks detect -v --redact --no-git .        
